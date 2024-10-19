@@ -2,23 +2,28 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
+from controller.controler import greet_msg
 
 @csrf_exempt
 def generate_message(request):
+    # Variable para almacenar el estado de si se envió el saludo
+    if not hasattr(generate_message, 'greeted'):
+        generate_message.greeted = False  # Inicializa la variable como False
+
     if request.method == 'POST':
         try:
             # Leer el cuerpo de la solicitud y convertirlo de JSON a un diccionario de Python
-            data = json.loads(request.body)  # Aquí se corrige el error
-            
+            data = json.loads(request.body)
             user_input = data.get('user_input', '').lower()  # Obtener el input del usuario
 
             # Condicional para decidir qué respuesta enviar
             if user_input == 'hola':
-                response = 'Hola'
-            elif user_input == 'aea':
-                response = 'aea'
+                response = greet_msg
+                generate_message.greeted = True  # Actualiza el estado a True
+            elif generate_message.greeted:  # Verifica si se ha enviado 'hola' antes
+                response = generate_llm(user_input)  # Llama al método generate_llm
             else:
-                response = f"No se reconoce el input: {user_input}"  # Mensaje por defecto para otros inputs
+                response = "Enviar mensaje válido"  # Mensaje si no se ha saludado
 
             # Devolver la respuesta como JSON
             return JsonResponse({"response": response}, status=200)
@@ -28,3 +33,7 @@ def generate_message(request):
             return JsonResponse({"error": str(e)}, status=500)
 
     return JsonResponse({"error": "Invalid request method"}, status=405)
+
+# Método que simula la generación de historias de usuario
+def generate_llm(user_input):
+    return "HISTORIAS DE USUARIO"  # Respuesta estática por ahora
