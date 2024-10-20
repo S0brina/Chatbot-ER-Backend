@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
-from controller.controler import greet_msg
+from controller.controler import greet_msg, generate_llm
 
 @csrf_exempt
 def generate_message(request):
@@ -33,7 +33,3 @@ def generate_message(request):
             return JsonResponse({"error": str(e)}, status=500)
 
     return JsonResponse({"error": "Invalid request method"}, status=405)
-
-# Método que simula la generación de historias de usuario
-def generate_llm(user_input):
-    return "HISTORIAS DE USUARIO"  # Respuesta estática por ahora
