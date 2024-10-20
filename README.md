@@ -17,7 +17,7 @@ Para descargar 'LLaMa 3.1 8B Instruct', seguir los siguientes pasos:
           ## git clone https://<USERNAME>:<TOKEN_NAME>@huggingface.co/<MODEL_NAME>
           - En <USERNAME> colocar su nombre de usuario de Hugging Faces; en <TOKEN_NAME>, el token copiado anteriormente.
    Por ejemplo:
-           ## git clone https://sabrinaxsln:hf_1234565678@huggingface.co/<MODEL_NAME>
+           ## git clone https://sabrinaxsln:hf_1234565678@huggingface.co/meta-llama/Llama-3.1-8B-Instruct
 10. Ejecutar el comando y esperar la descargar completa del modelo, este puede tardar dependiento de la velocidad de su red.
 
 Para descargar 'Git', seguir los siguientes pasos:
