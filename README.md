@@ -13,11 +13,10 @@ Antes de ejecutar el modelo, se necesita descargar Git y el modelo de LLaMa 3.1 
 6. Al guardar el token, se mostrará un pop-up con el token generado, copiarlo para más adelante.
 7. Dirigirse al 'Explorador de archivos' en su ordenador y crear una nueva carpeta.
 8. Hacer click derecho en la carpeta creada y seleccionar la opción 'Open Git Bash here'.
-9. Ingresar el siguiente comando:
-          ### `git clone https://<USERNAME>:<TOKEN_NAME>@huggingface.co/<MODEL_NAME>`
-          - En <USERNAME> colocar su nombre de usuario de Hugging Faces; en <TOKEN_NAME>, el token copiado anteriormente.
+9. Ingresar el siguiente comando: `git clone https://<USERNAME>:<TOKEN_NAME>@huggingface.co/<MODEL_NAME>`
+   En <USERNAME> colocar su nombre de usuario de Hugging Faces; en <TOKEN_NAME>, el token copiado anteriormente.
    Por ejemplo:
-            ### `git clone https://sabrinaxsln:hf_1234565678@huggingface.co/meta-llama/Llama-3.1-8B-Instruct`
+   `git clone https://sabrinaxsln:hf_1234565678@huggingface.co/meta-llama/Llama-3.1-8B-Instruct`
 10. Ejecutar el comando y esperar la descargar completa del modelo, este puede tardar dependiento de la velocidad de su red.
 
 # Para descargar 'Git', seguir los siguientes pasos:
